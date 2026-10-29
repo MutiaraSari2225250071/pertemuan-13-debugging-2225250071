@@ -1,23 +1,42 @@
 def hitung_rata_rata(nilai):
-    return sum(nilai) / 5
+    if len(nilai) == 0:
+        return 0
+    return sum(nilai) / len(nilai)
 
 
 def status(nilai):
-    if nilai > 60:
+    if nilai >= 60:
         return "Lulus"
     return "Tidak lulus"
 
 
 def nilai_tertinggi(nilai):
-    tertinggi = 0
-    for x in nilai:
-        if x < tertinggi:
+    if len(nilai) == 0:
+        return None
+    tertinggi = nilai[0]
+    for x in nilai[1:]:
+        if x > tertinggi:
             tertinggi = x
     return tertinggi
 
 
-nilai = [80, 60, 90, 70]
+# T1: Menguji rata-rata empat nilai
+print("T1 - Rata-rata:", hitung_rata_rata([80, 60, 90, 70]))
 
-print("Rata-rata:", hitung_rata_rata(nilai))
-print("Status 60:", status(60))
-print("Tertinggi:", nilai_tertinggi(nilai))
+# T2: Menguji rata-rata dua nilai
+print("T2 - Rata-rata:", hitung_rata_rata([100, 80]))
+
+# T3: Menguji batas kelulusan nilai 60
+print("T3 - Status nilai 60:", status(60))
+
+# T4: Menguji nilai di bawah batas kelulusan
+print("T4 - Status nilai 59:", status(59))
+
+# T5: Menguji pencarian nilai tertinggi
+print("T5 - Nilai tertinggi:", nilai_tertinggi([80, 60, 90, 70]))
+
+# T6: Menguji rata-rata dengan input kosong
+print("T6 - Rata-rata input kosong:", hitung_rata_rata([]))
+
+# T7: Menguji nilai tertinggi dengan input kosong
+print("T7 - Nilai tertinggi input kosong:", nilai_tertinggi([]))
