@@ -84,7 +84,6 @@ def status(nilai):
 
 Kode setelah perbaikan:
 
-```python
 def nilai_tertinggi(nilai):
     if len(nilai) == 0:
         return None
@@ -93,34 +92,3 @@ def nilai_tertinggi(nilai):
         if x > tertinggi:
             tertinggi = x
     return tertinggi
-```
-
-## 5. Retest
-
-Setelah perbaikan dilakukan, seluruh test case dijalankan kembali. Hasil aktualnya adalah:
-
-| ID | Input | Expected | Actual Setelah Perbaikan | Status |
-|---|---|---|---|---|
-| T1 | Rata-rata `[80, 60, 90, 70]` | `75.0` | `75.0` | PASS |
-| T2 | Rata-rata `[100, 80]` | `90.0` | `90.0` | PASS |
-| T3 | Status nilai `60` | `Lulus` | `Lulus` | PASS |
-| T4 | Status nilai `59` | `Tidak lulus` | `Tidak lulus` | PASS |
-| T5 | Nilai tertinggi `[80, 60, 90, 70]` | `90` | `90` | PASS |
-| T6 | Rata-rata `[]` | `0` | `0` | PASS |
-| T7 | Nilai tertinggi `[]` | `None` | `None` | PASS |
-
-Berdasarkan hasil retest, ketujuh test case menghasilkan keluaran yang sesuai dengan hasil yang diharapkan. Dengan demikian, seluruh test case dinyatakan **PASS**.
-
-## 6. Cara Menjalankan
-
-Jalankan perintah berikut dari folder utama proyek:
-
-```bash
-python3 praktik/praktik_4_debugging.py
-```
-
-Pada Windows, program juga dapat dijalankan melalui terminal Visual Studio Code menggunakan interpreter Python yang telah dikonfigurasi.
-
-## 7. Refleksi
-
-Proses debugging membantu saya memahami bahwa kesalahan program tidak selalu berasal dari sintaks, tetapi dapat terjadi pada logika perhitungan dan kondisi. Penggunaan debugger di Visual Studio Code membantu menelusuri alur eksekusi program serta memeriksa nilai variabel. Selain itu, pengujian dengan beberapa variasi input, termasuk nilai batas dan input kosong, membantu menemukan kesalahan yang mungkin tidak terlihat pada satu pengujian saja. Setelah perbaikan, seluruh test case kembali diuji untuk memastikan fungsi program berjalan sesuai dengan hasil yang diharapkan.
